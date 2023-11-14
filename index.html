@@ -316,29 +316,21 @@
         <div class="contact__mail">
           <h2 class="contact__title">Send Me A Message</h2>
 
-          <form action="" class="contact__form" id="contact-form">
+          <form action="" class="contact__form" id="contact-form" name="submit-to-google-sheet"
+            onsubmit="handleSubmit(event)">
             <div class="contact__group">
               <div class="contact__box">
-                <input type="text" id="name" name="user_name" placeholder="First Name " class="contact__input"
-                  required />
-                <label for="name" class="contact__label">First Name </label>
+                <input type="text" id="name" name="nama" placeholder="First Name " class="contact__input" />
+                <label for="name" class="contact__label">Name </label>
               </div>
 
               <div class="contact__box">
-                <input type="email" id="email" name="user_email" placeholder="Email Address" class="contact__input"
-                  required />
+                <input type="email" id="email" name="email" placeholder="Email Address" class="contact__input" />
                 <label for="email" class="contact__label">Email Address</label>
               </div>
             </div>
-
-            <div class="contact__box">
-              <input type="text" id="subject" name="user_subject" placeholder="Subject" class="contact__input"
-                required />
-              <label for="subject" class="contact__label">Subject</label>
-            </div>
             <div class="contact__box contact__area">
-              <textarea name="user__message" id="message" class="contact__input" required
-                placeholder="Message"></textarea>
+              <textarea name="pesan" id="message" class="contact__input" placeholder="Message"></textarea>
               <label for="message" class="contact__label">Message</label>
             </div>
             <p class="contact__message" id="contact-message"></p>
@@ -402,7 +394,8 @@
   <!--=============== SCROLLREVEAL ===============-->
   <script src="assets/js/scrollreveal.min.js"></script>
 
-  <!--=============== EMAIL JS ===============-->
+  <!-- Sweet Alert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!--=============== MAIN JS ===============-->
   <script src="assets/js/main.js"></script>

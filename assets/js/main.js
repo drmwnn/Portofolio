@@ -35,7 +35,50 @@ window.addEventListener("scroll", ShadowHeader);
 
 
 /*=============== FORM ===============*/
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwzW0i80mQWTN4HIhfAF3Led2z9Q6NjUUWWhkgOMSDC1xBJLm3mgL08MJShbPL8hKPHvw/exec'
+  const form = document.forms['submit-to-google-sheet']
 
+  function handleSubmit(event) {
+        event.preventDefault();
+        const form = document.forms["submit-to-google-sheet"];
+        const nameInput = form.elements["name"];
+        const emailInput = form.elements["email"];
+        const messageInput = form.elements["pesan"];
+
+        if (!nameInput.value || !emailInput.value || !messageInput.value) {
+          // Menampilkan SweetAlert jika terjadi kesalahan input
+          Swal.fire({
+            icon: "error",
+            title: "Kesalahan",
+            text: "Harap lengkapi semua kolom sebelum mengirim pesan",
+          });
+          return;
+        }
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            // Menampilkan SweetAlert setelah pengiriman berhasil
+            Swal.fire({
+              icon: "success",
+              title: "Berhasil",
+              text: "Pesan telah terkirim",
+              showConfirmButton: false,
+              timer: 2000, // Menutup otomatis pesan setelah 2 detik
+            });
+            // Mereset inputan
+            form.reset();
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            // Menampilkan SweetAlert jika terjadi kesalahan
+            Swal.fire({
+              icon: "error",
+              title: "Kesalahan",
+              text: "Terjadi kesalahan saat mengirim pesan",
+            });
+          });
+      }
 
 
 /*=============== SHOW SCROLL UP ===============*/
