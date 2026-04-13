@@ -1,454 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asep Darmawan — Full Stack Developer crafting exceptional digital experiences.">
+  <meta name="keywords" content="Web Developer, Full Stack, Portfolio, Asep Darmawan">
+  <meta name="author" content="Asep Darmawan">
 
-  <!--=============== FAVICON ===============-->
-  <link rel="shortcut icon" href="assets/img/programming.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/img/programming.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!--=============== REMIXICONS ===============-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="" />
-
-  <!--=============== CSS ===============-->
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <title>Portfolio - Asep Darmawan</title>
+  <title>Asep Darmawan — Developer</title>
 </head>
 
 <body>
-  <!--==================== HEADER ====================-->
+
+  <!-- ============ HEADER (Floating Toolbar) ============ -->
   <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-circle"><img src="assets/img/favicon-32x32.png" alt="" /></span>
-        <span class="nav__logo-name">Asep Darmawan</span>
-      </a>
-      <div class="nav__menu" id="nav-menu">
-        <span class="nav__title">Menu</span>
-        <h3 class="nav__name">Asep</h3>
+    <div class="header__bar">
+      <nav class="nav" id="nav">
+        <a href="#home" class="nav__link active">Home</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+      <span class="header__sep"></span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="ri-sun-line"></i>
+      </button>
+    </div>
 
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link nav__link-button">Contact Me</a></li>
-        </ul>
-
-        <!-- close button -->
-        <div class="nav__close" id="nav-close">
-          <i class="ri-close-line"></i>
-        </div>
-      </div>
-
-      <div class="nav__buttons">
-        <!-- theme buttons -->
-        <i class="ri-moon-line change-theme" id="theme-button"></i>
-        <!-- toggle button -->
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="ri-menu-4-line"></i>
-        </div>
-      </div>
-    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
   </header>
 
-  <!--==================== MAIN ====================-->
-  <main class="main">
-    <!--==================== HOME ====================-->
-    <section class="home section" id="home">
-      <div class="home__container container grid">
-        <h1 class="home__name">Asep Darmawan</h1>
-
-        <div class="home__profile">
-          <div class="home__image">
-            <img src="assets/img/a.jpg" alt="" class="home__img" />
-            <div class="home__shadow"></div>
-            <img src="assets/img/curved-arrow.svg" alt="" class="home__arrow" />
-            <img src="assets/img/random-lines.svg" alt="" class="line" />
-            <div class="geometric-box"></div>
-          </div>
-
-          <div class="home__social">
-            <a href="asep.darmawan879@gmail.com" target="_blank" class="contact__social-link">
-              <i class="ri-mail-line"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener" class="home__social-link">
-              <i class="ri-linkedin-line"></i>
-            </a>
-            <a href="https://github.com/drmwnn" target="_blank" rel="noopener" class="home__social-link">
-              <i class="ri-github-line"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="home__info">
-          <p class="home__description"><b>Web Developer</b>, Dengan keahlian pemrograman yang saya miliki, saya dapat
-            menyelesaikan proyek-proyek dengan berkualitas tinggi.</p>
-
-          <a href="" class="home__scroll">
-            <div class="home__scroll-box">
-              <i class="ri-arrow-down-s-line"></i>
-            </div>
-            <span class="home__scroll-text">Scroll Down</span>
-          </a>
-        </div>
+  <!-- ============ MOBILE NAV ============ -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close">
+      <i class="ri-close-line"></i>
+    </button>
+    <div class="mobile-nav__content">
+      <a href="#home" class="mobile-nav__link">Home</a>
+      <a href="#about" class="mobile-nav__link">About</a>
+      <a href="#skills" class="mobile-nav__link">Skills</a>
+      <a href="#projects" class="mobile-nav__link">Projects</a>
+      <a href="#contact" class="mobile-nav__link">Contact</a>
+    </div>
+    <div class="mobile-nav__footer">
+      <div class="mobile-nav__socials">
+        <a href="https://github.com/drmwnn" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://wa.me/6285877888837" target="_blank" rel="noopener"><i class="ri-whatsapp-fill"></i></a>
+        <a href="https://www.instagram.com/drmwn67/" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
       </div>
-    </section>
+      <button class="theme-toggle theme-toggle--mobile" id="themeToggleMobile" aria-label="Toggle theme">
+        <i class="ri-sun-line"></i>
+      </button>
+    </div>
+  </div>
 
-    <!--==================== ABOUT ====================-->
-    <section class="about section" id="about">
-      <h2 class="section__title-1">About me</h2>
-      <div class="about__info">
-        <p class="about__description">
-          Nama saya Asep Darmawan, bisa dipanggil Asep. Saya adalah mahasiswa Teknik Informatika di Universitas
-          Tarumanagara yang tertarik dengan Web Development. Saya menguasai beberapa bahasa pemrograman seperti C++,
-          Java, HTML, CSS, JavaScript dan telah membuat beberapa proyek yang menarik. Saya juga pernah menjadi anggota PEMIRA UNTAR 2023 dan mendapatkan banyak pengalaman. Saya adalah orang yang berdedikasi, rajin, dan
-          bertanggung jawab. Saya ingin bergabung dengan perusahaan atau organisasi yang dapat memberi saya kesempatan
-          untuk berkembang dan berkontribusi.
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__grid container">
+      <div class="hero__content">
+        <div class="hero__label">
+          <span class="pulse-dot"></span>
+          Available for work
+        </div>
+
+        <h1 class="hero__title">
+          I'm <strong>Asep Darmawan</strong>,<br>
+          a <em>Full Stack</em> Developer.
+        </h1>
+
+        <p class="hero__text">
+          I build polished web &amp; mobile applications with clean architecture,
+          modern technologies, and a keen eye for user experience.
         </p>
-        <div class="about__buttons">
-          <a href="#contact" class="button"><i class="ri-send-plane-line"></i>Contact me </a>
 
-          <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener" class="button__ghost">
-            <i class="ri-linkedin-box-fill"></i>
+        <div class="hero__buttons">
+          <a href="#projects" class="btn btn--fill">
+            View Projects <i class="ri-arrow-down-line"></i>
+          </a>
+          <a href="#contact" class="btn btn--outline">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="orbit">
+          <div class="orbit__ring orbit__ring--1">
+            <span class="orbit__dot" style="--d:0deg"><i class="ri-html5-fill"></i></span>
+            <span class="orbit__dot" style="--d:120deg"><i class="ri-css3-fill"></i></span>
+            <span class="orbit__dot" style="--d:240deg"><i class="ri-javascript-fill"></i></span>
+          </div>
+          <div class="orbit__ring orbit__ring--2">
+            <span class="orbit__dot" style="--d:60deg"><i class="ri-database-2-fill"></i></span>
+            <span class="orbit__dot" style="--d:180deg"><i class="ri-server-fill"></i></span>
+            <span class="orbit__dot" style="--d:300deg"><i class="ri-smartphone-fill"></i></span>
+          </div>
+          <div class="orbit__center">
+            <span>AD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <span class="scroll-cue__line"></span>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            I am a graduate of <strong>Informatics Engineering</strong> from
+            <strong>Tarumanagara University</strong>, specializing in web and mobile
+            app development. I have hands-on experience building applications with
+            geolocation features, facial recognition, and comprehensive portal systems.
+          </p>
+          <p>
+            I'm dedicated, creative, and passionate about solving complex problems —
+            crafting impactful solutions that make a real difference.
+          </p>
+        </div>
+
+        <div class="about__cards">
+          <div class="info-card">
+            <div class="info-card__icon"><i class="ri-graduation-cap-fill"></i></div>
+            <h3>Education</h3>
+            <p>Informatics Engineering<br><small>Tarumanagara University</small></p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><i class="ri-terminal-box-fill"></i></div>
+            <h3>15+ Projects</h3>
+            <p>Web, Mobile, Desktop &amp; Games</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><i class="ri-stack-fill"></i></div>
+            <h3>10+ Technologies</h3>
+            <p>Full Stack Development</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Tech <span>Stack</span></h2>
+
+      <div class="skills__grid">
+        <!-- Programming Languages -->
+        <div class="skill-category">
+          <h3><i class="ri-terminal-box-fill"></i> Programming Languages</h3>
+          <div class="skill-category__items">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"><span>C#</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-category">
+          <h3><i class="ri-layout-4-fill"></i> Frontend</h3>
+          <div class="skill-category__items">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js"><span>Vue.js</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS"><span>TailwindCSS</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery"><span>jQuery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category">
+          <h3><i class="ri-code-s-slash-fill"></i> Backend</h3>
+          <div class="skill-category__items">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <img src="assets/img/skill/ejs.png" alt="EJS"><span>EJS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Development -->
+        <div class="skill-category">
+          <h3><i class="ri-smartphone-fill"></i> Mobile Development</h3>
+          <div class="skill-category__items">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span>Flutter</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart"><span>Dart</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"><span>Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category">
+          <h3><i class="ri-database-2-fill"></i> Database</h3>
+          <div class="skill-category__items">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"><span>Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category">
+          <h3><i class="ri-tools-fill"></i> Tools</h3>
+          <div class="skill-category__items">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span>Figma</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Colab"><span>Google Colab</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+
+      <div class="projects__filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter=".web">Web</button>
+        <button class="filter-btn" data-filter=".desktop">Desktop</button>
+        <button class="filter-btn" data-filter=".mobile">Mobile</button>
+        <button class="filter-btn" data-filter=".game">Game</button>
+      </div>
+
+      <div class="projects__grid" id="projectGrid">
+        <!-- 1 -->
+        <article class="card mix web">
+          <div class="card__img">
+            <img src="assets/img/Codashop.png" alt="Codashop Clone" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/codashop" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://codashop-3za1.onrender.com/" target="_blank" rel="noopener"><i class="ri-external-link-line"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Web App</span>
+            <h3>Codashop Clone</h3>
+            <p>Game top-up platform built with Node.js, MongoDB, and EJS.</p>
+            <div class="card__tech"><span>Node.js</span><span>MongoDB</span><span>EJS</span></div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="card mix web">
+          <div class="card__img">
+            <img src="assets/img/javaspring.png" alt="Food Ordering" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/Ecomerce" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://youtu.be/tWcLarbp2gU" target="_blank" rel="noopener"><i class="ri-play-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Web App</span>
+            <h3>Food Ordering System</h3>
+            <p>Online food ordering with Java Spring &amp; MySQL.</p>
+            <div class="card__tech"><span>Java Spring</span><span>MySQL</span></div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="card mix desktop">
+          <div class="card__img">
+            <img src="assets/img/Hospital.png" alt="Hospital Management" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/HospitalManagementSystem" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://www.youtube.com/watch?v=I34XuDtLCKk" target="_blank" rel="noopener"><i class="ri-play-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Desktop</span>
+            <h3>Hospital Management</h3>
+            <p>Comprehensive hospital management with JavaFX and MySQL.</p>
+            <div class="card__tech"><span>JavaFX</span><span>MySQL</span></div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="card mix web">
+          <div class="card__img">
+            <img src="assets/img/AsdarrID.png" alt="AsdarrID" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/customer" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://asdarrid.onrender.com/" target="_blank" rel="noopener"><i class="ri-external-link-line"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Web Platform</span>
+            <h3>AsdarrID Top Up</h3>
+            <p>Gaming top-up platform with modern UI.</p>
+            <div class="card__tech"><span>Node.js</span><span>MongoDB</span></div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="card mix mobile">
+          <div class="card__img">
+            <img src="assets/img/Twitter.png" alt="Twitter Clone" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/twitter" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://www.youtube.com/watch?v=OUA44DNhM0U" target="_blank" rel="noopener"><i class="ri-play-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Mobile</span>
+            <h3>Twitter Clone</h3>
+            <p>Social media app built with Dart &amp; Flutter.</p>
+            <div class="card__tech"><span>Dart</span><span>Flutter</span></div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="card mix game">
+          <div class="card__img">
+            <img src="assets/img/Game1.png" alt="2D Game" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/Materi-Game2D" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://www.youtube.com/watch?v=Ja9c-WNbRvk" target="_blank" rel="noopener"><i class="ri-play-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Game</span>
+            <h3>2D Android Game</h3>
+            <p>Unity-based 2D game built with C#.</p>
+            <div class="card__tech"><span>Unity</span><span>C#</span></div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="card mix web">
+          <div class="card__img">
+            <img src="assets/img/Movie DB.png" alt="Movie DB" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/jquery" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://jquery-ivory.vercel.app/" target="_blank" rel="noopener"><i class="ri-external-link-line"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Web App</span>
+            <h3>Movie Database</h3>
+            <p>Movie search app powered by TMDB API.</p>
+            <div class="card__tech"><span>jQuery</span><span>TMDB API</span></div>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="card mix desktop">
+          <div class="card__img">
+            <img src="assets/img/FX.png" alt="Top Up Game" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/UTS" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://youtu.be/dODNCBVBGIA" target="_blank" rel="noopener"><i class="ri-play-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Desktop</span>
+            <h3>Game Top Up App</h3>
+            <p>JavaFX desktop application for game top-ups.</p>
+            <div class="card__tech"><span>JavaFX</span><span>MySQL</span></div>
+          </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="card mix game">
+          <div class="card__img">
+            <img src="assets/img/Game2.png" alt="Game 2" loading="lazy">
+            <div class="card__actions">
+              <a href="https://github.com/drmwnn/UAS_Game2D" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+              <a href="https://www.youtube.com/watch?v=bu9D7osXWAU" target="_blank" rel="noopener"><i class="ri-play-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Game</span>
+            <h3>Mobile Game 2D</h3>
+            <p>Unity game development project.</p>
+            <div class="card__tech"><span>Unity</span><span>C#</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="contact__lead">
+            Have a project in mind or just want to say hello? I'd love to hear from you.
+          </p>
+
+          <a href="mailto:asep.darmawan879@gmail.com" class="contact__link">
+            <i class="ri-mail-fill"></i>
+            <div>
+              <small>Email</small>
+              <span>asep.darmawan879@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/6285877888837" target="_blank" rel="noopener" class="contact__link">
+            <i class="ri-whatsapp-fill"></i>
+            <div>
+              <small>WhatsApp</small>
+              <span>+62 858-7788-8837</span>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener" class="contact__link">
+            <i class="ri-linkedin-fill"></i>
+            <div>
+              <small>LinkedIn</small>
+              <span>drmwnnn</span>
+            </div>
           </a>
         </div>
+
+        <form class="contact__form" id="contactForm" name="submit-to-google-sheet">
+          <div class="input-group">
+            <input type="text" name="nama" id="name" placeholder=" " required>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="input-group">
+            <input type="email" name="email" id="email" placeholder=" " required>
+            <label for="email">Email Address</label>
+          </div>
+          <div class="input-group">
+            <textarea name="pesan" id="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" class="btn btn--fill btn--block">
+            Send Message <i class="ri-send-plane-fill"></i>
+          </button>
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!--==================== SERVICES ====================-->
-    <section class="skills section" id="skills">
-      <h2 class="section__title-2">Skills</h2>
-      <div class="skills_container">
-        <img src="assets/img/skill/html.jpeg" alt="HTML skill">
-        <img src="assets/img/skill/css.png" alt="CSS skill">
-        <img src="assets/img/skill/js.jpeg" alt="JavaScript skill">
-        <img src="assets/img/skill/c++.jpeg" alt="C++ skill">
-        <img src="assets/img/skill/boostrap.png" alt="Bootstrap skill">
-        <img src="assets/img/skill/nodejs.png" alt="Node.js skill">
-        <img src="assets/img/skill/mongodb.jpg" alt="MongoDB skill">
-        <img src="assets/img/skill/mysql.png" alt="MySQL skill">
-        <img src="assets/img/skill/OIP.jpeg" alt="Other skill">
-        <img src="assets/img/skill/word.png" alt="Microsoft Word skill">
-        <img src="assets/img/skill/excel.png" alt="Microsoft Excel skill">
-        <img src="assets/img/skill/ppt.jpeg" alt="Microsoft PowerPoint skill">
-      </div>
-    </section>
-
-    <!--==================== PROJECTS ====================-->
-    <section class="projects section" id="projects">
-      <h2 class="section__title-1">My Projects</h2>
-      <div class="work__filters">
-        <span class="work__items active-work" data-filter="all">All</span>
-        <span class="work__items" data-filter=".web">Web</span>
-        <span class="work__items" data-filter=".desktop">Desktop</span>
-        <span class="work__items" data-filter=".mobile">Mobile</span>
-        <span class="work__items" data-filter=".game">Game</span>
-      </div>
-      <div class="projects__container container grid">
-
-        <article class="projects__card mix desktop">
-          <div class="projects__image">
-            <img src="assets/img/FX.png" alt="project" class="projects__img" />
-
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Desktop</h3>
-            <h2 class="projects__title">Top Up Game (statis)</h2>
-
-            <p class="projects__description">Membuat Aplikasi desktop menggunakan javaFX</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/UTS" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-github-fill"></i>Github
-            </a>
-            <a href="https://youtu.be/dODNCBVBGIA" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-play-fill"></i>Demo
-            </a>
-          </div>
-        </article>
-
-        <article class="projects__card mix web">
-          <div class="projects__image">
-            <img src="assets/img/javaspring.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Website</h3>
-            <h2 class="projects__title">Pemesanan Makanan Online</h2>
-
-            <p class="projects__description">Website pemesanan makanan online menggunakan Java Spring dan MySQL sebagai
-              database</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/Ecomerce" target="_blank" rel="noopener" class="projects__link"> <i
-                class="ri-github-fill"></i>Github </a>
-            <a href="https://youtu.be/tWcLarbp2gU" target="_blank" rel="noopener" class="projects__link"> <i
-                class="ri-play-fill"></i>Demo </a>
-          </div>
-        </article>
-        
-        <article class="projects__card mix web">
-          <div class="projects__image">
-            <img src="assets/img/Codashop.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Website</h3>
-            <h2 class="projects__title">Remake Codashop</h2>
-
-            <p class="projects__description">Website top up game dengan html,css, javascript, EJS dan MongoDB sebagai
-              database</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/codashop" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-github-fill"></i>Github
-            </a>
-            <a href="https://codashop-3za1.onrender.com/" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-play-fill"></i>Demo
-            </a>
-          </div>
-          </article>
-
-        <article class="projects__card mix desktop">
-          <div class="projects__image">
-            <img src="assets/img/Hospital.png" alt="project" class="projects__img" />
-
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Desktop</h3>
-            <h2 class="projects__title">Hospital Management System</h2>
-
-            <p class="projects__description">Membuat Aplikasi desktop menggunakan javaFX dan MySQL sebagai database.</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/HospitalManagementSystem" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-github-fill"></i>Github
-            </a>
-            <a href="https://www.youtube.com/watch?v=I34XuDtLCKk" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-play-fill"></i>Demo
-            </a>
-          </div>
-        </article>
-
-        <article class="projects__card mix game">
-          <div class="projects__image">
-            <img src="assets/img/Game1.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Game</h3>
-            <h2 class="projects__title"> Desain Game 2D Android</h2>
-
-            <p class="projects__description">Membuat Game 2D Android menggunakan Unity dan bahasa yang digunakan c#.</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/Materi-Game2D" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-github-fill"></i>Github
-            </a>
-            <a href="https://www.youtube.com/watch?v=Ja9c-WNbRvk" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-play-fill"></i>Demo
-            </a>
-          </div>
-        </article>
-
-        <article class="projects__card mix mobile">
-          <div class="projects__image">
-            <img src="assets/img/Twitter.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">App</h3>
-            <h2 class="projects__title"> Remake Twitter</h2>
-
-            <p class="projects__description">Membuat Aplikasi Twitter menggunakan Dart.</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/twitter" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-github-fill"></i>Github
-            </a>
-            <a href="https://www.youtube.com/watch?v=OUA44DNhM0U" target="_blank" class="projects__link" rel="noopener">
-              <i class="ri-play-fill"></i>Demo
-            </a>
-          </div>
-          </article>
-
-        <article class="projects__card mix web">
-          <div class="projects__image">
-            <img src="assets/img/AsdarrID.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Website</h3>
-            <h2 class="projects__title">Website Top Up AsdarrID</h2>
-
-            <p class="projects__description">Website top up game dengan html,css, javascript, EJS dan MongoDB sebagai
-              database.</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/customer" target="_blank" rel="noopener" class="projects__link"> <i
-                class="ri-github-fill"></i>Github </a>
-            <a href="https://asdarrid.onrender.com/" target="_blank" class="projects__link" rel="noopener"> <i
-                class="ri-play-fill"></i>Demo </a>
-          </div>
-        </article>
-
-        <article class="projects__card mix web">
-          <div class="projects__image">
-            <img src="assets/img/Movie DB.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Website</h3>
-            <h2 class="projects__title">Movie DB</h2>
-
-            <p class="projects__description">sebuah website untuk mencari film berdasarkan judul. Menggunakan API dari
-              The Movie Database, layanan online yang menyediakan informasi tentang film, acara TV, dan selebriti.</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/jquery" target="_blank" rel="noopener" class="projects__link"> <i
-                class="ri-github-fill"></i>Github </a>
-            <a href="https://jquery-ivory.vercel.app/" target="_blank" rel="noopener" class="projects__link"> <i
-                class="ri-play-fill"></i>Demo </a>
-          </div>
-        </article>
-
-        <article class="projects__card mix game">
-          <div class="projects__image">
-            <img src="assets/img/Game2.png" alt="project" class="projects__img" />
-          </div>
-
-          <div class="projects__content">
-            <h3 class="projects__subtitle">Game</h3>
-            <h2 class="projects__title">Game 2D Android</h2>
-
-            <p class="projects__description">Membuat Game 2D Android menggunakan Unity dan bahasa yang digunakan c#.</p>
-          </div>
-
-          <div class="projects__buttons">
-            <a href="https://github.com/drmwnn/UAS_Game2D" target="_blank" class="projects__link" rel="noopener"> <i
-                class="ri-github-fill"></i>Github </a>
-            <a href="https://www.youtube.com/watch?v=bu9D7osXWAU" target="_blank" class="projects__link" rel="noopener"> <i
-                class="ri-play-fill"></i>Demo </a>
-          </div>
-        </article>
-
-
-      </div>
-    </section>
-
-    <!--==================== CONTACT ====================-->
-    <section class="contact section" id="contact">
-      <div class="contact__container grid">
-        <div class="contact__data">
-          <h2 class="section__title-2">
-            <span>Contact Me</span>
-          </h2>
-
-          <p class="contact__description-1">I will read all emails. Send me any message you want and I'll get back to
-            you.</p>
-          <p class="contact__description-2">I need your <b>Name</b> and <b>Email Address</b>, but you won't receive
-            anything other than your reply.</p>
-          <div class="geometric-box"></div>
-        </div>
-
-        <div class="contact__mail">
-          <h2 class="contact__title">Send Me A Message</h2>
-
-          <form action="" class="contact__form" id="contact-form" name="submit-to-google-sheet"
-            onsubmit="handleSubmit(event)">
-            <div class="contact__group">
-              <div class="contact__box">
-                <input type="text" id="name" name="nama" placeholder="First Name " class="contact__input" />
-                <label for="name" class="contact__label">Name </label>
-              </div>
-
-              <div class="contact__box">
-                <input type="email" id="email" name="email" placeholder="Email Address" class="contact__input" />
-                <label for="email" class="contact__label">Email Address</label>
-              </div>
-            </div>
-            <div class="contact__box contact__area">
-              <textarea name="pesan" id="message" class="contact__input" placeholder="Message"></textarea>
-              <label for="message" class="contact__label">Message</label>
-            </div>
-            <p class="contact__message" id="contact-message"></p>
-            <button type="submit" class="contact__button button"><i class="ri-send-plane-line"></i> Send
-              Message</button>
-          </form>
-        </div>
-
-        <div class="contact__social">
-          <img src="assets/img/curved-arrow.svg" alt="" class="contact__social-arrow" />
-
-          <div class="contact__social-data">
-            <div class="contact__social-links">
-
-              <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" class="contact__social-link" rel="noopener">
-                <i class="ri-linkedin-box-fill"></i>
-              </a>
-              <a href="asep.darmawan879@gmail.com" target="_blank" class="contact__social-link">
-                <i class="ri-mail-line"></i>
-              </a>
-              <a href="https://github.com/drmwnn" target="_blank" class="contact__social-link" rel="noopener">
-                <i class="ri-github-fill"></i>
-                <a href="https://wa.me/6285877888837" target="_blank" class="contact__social-link" rel="noopener">
-                  <i class="ri-whatsapp-fill"></i>
-                </a>
-                <a href="https://www.instagram.com/drmwn67/" target="_blank" class="contact__social-link" rel="noopener">
-                  <i class="ri-instagram-line"></i>
-                </a>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!--==================== FOOTER ====================-->
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="footer__container container grid">
-      <ul class="footer__links">
-        <li><a href="#home" class="footer__link">Home </a></li>
-        <li><a href="#about" class="footer__link">About </a></li>
-        <li><a href="#skills" class="footer__link">Skills </a></li>
-        <li><a href="#projects" class="footer__link">Projects</a></li>
-      </ul>
-
-      <span class="footer__copy">
-        &#169; All Rights Reserved By
-        <a href="#">Asep Darmawan.</a>
-      </span>
+    <div class="container footer__inner">
+      <p>&copy; 2025 <strong>Asep Darmawan</strong>. Built with ☕ and passion.</p>
+      <div class="footer__links">
+        <a href="https://github.com/drmwnn" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/drmwn67/" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
   </footer>
 
-  <!--========== SCROLL UP ==========-->
-  <a href="#" class="scrollup" id="scroll-up">
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="ri-arrow-up-line"></i>
-  </a>
-  <!--=============== MIXITUP ===============-->
+  </button>
+
   <script src="assets/js/mixitup.min.js"></script>
-
-  <!--=============== SCROLLREVEAL ===============-->
-  <script src="assets/js/scrollreveal.min.js"></script>
-
-  <!-- Sweet Alert CDN -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <!--=============== MAIN JS ===============-->
   <script src="assets/js/main.js"></script>
 </body>
 

@@ -1,173 +1,259 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById("nav-menu"),
-  navToogle = document.getElementById("nav-toggle"),
-  navClose = document.getElementById("nav-close");
+/* ===============================================
+   PORTFOLIO — MAIN JAVASCRIPT
+   =============================================== */
 
-//   menu show if exists
-if (navToogle) {
-  navToogle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-  });
-}
+(() => {
+  'use strict';
 
-// menu hidden if exists
-if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-  });
-}
+  /* ---------- DOM ---------- */
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll(".nav__link");
+  const header     = $('#header');
+  const hamburger  = $('#hamburger');
+  const mobileNav  = $('#mobileNav');
+  const mobileClose = $('#mobileClose');
+  const themeToggle = $('#themeToggle');
+  const themeToggleMobile = $('#themeToggleMobile');
+  const themeIcon  = themeToggle?.querySelector('i');
+  const themeIconMobile = themeToggleMobile?.querySelector('i');
+  const navLinks   = $$('.nav__link');
+  const sections   = $$('section[id]');
+  const contactForm = $('#contactForm');
 
-const linkAction = () => {
-  const navMenu = document.getElementById("nav-menu");
-  navMenu.classList.remove("show-menu");
-};
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-/*=============== SHADOW HEADER ===============*/
-const ShadowHeader = () => {
-  const header = document.getElementById("header");
+  /* =========================================
+     THEME
+     ========================================= */
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
 
-  this.scrollY >= 50 ? header.classList.add("shadow-header") : header.classList.remove("shadow-header");
-};
-window.addEventListener("scroll", ShadowHeader);
+  if (saved) {
+    root.setAttribute('data-theme', saved);
+    updateIcon(saved);
+  }
 
+  function toggleTheme() {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateIcon(next);
+  }
 
-/*=============== FORM ===============*/
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwzW0i80mQWTN4HIhfAF3Led2z9Q6NjUUWWhkgOMSDC1xBJLm3mgL08MJShbPL8hKPHvw/exec'
-  const form = document.forms['submit-to-google-sheet']
+  themeToggle?.addEventListener('click', toggleTheme);
+  themeToggleMobile?.addEventListener('click', toggleTheme);
 
-  function handleSubmit(event) {
-        event.preventDefault();
-        const form = document.forms["submit-to-google-sheet"];
-        const nameInput = form.elements["name"];
-        const emailInput = form.elements["email"];
-        const messageInput = form.elements["pesan"];
+  function updateIcon(theme) {
+    const cls = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
+    if (themeIcon) themeIcon.className = cls;
+    if (themeIconMobile) themeIconMobile.className = cls;
+  }
 
-        if (!nameInput.value || !emailInput.value || !messageInput.value) {
-          // Menampilkan SweetAlert jika terjadi kesalahan input
-          Swal.fire({
-            icon: "error",
-            title: "Kesalahan",
-            text: "Harap lengkapi semua kolom sebelum mengirim pesan",
-          });
-          return;
-        }
+  /* =========================================
+     HEADER SCROLL + AUTO-HIDE + BACK TO TOP
+     ========================================= */
+  const backToTop = $('#backToTop');
+  let lastScrollY = 0;
+  let ticking = false;
 
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            console.log("Success!", response);
-            // Menampilkan SweetAlert setelah pengiriman berhasil
-            Swal.fire({
-              icon: "success",
-              title: "Berhasil",
-              text: "Pesan telah terkirim",
-              showConfirmButton: false,
-              timer: 2000, // Menutup otomatis pesan setelah 2 detik
-            });
-            // Mereset inputan
-            form.reset();
-          })
-          .catch((error) => {
-            console.error("Error!", error.message);
-            // Menampilkan SweetAlert jika terjadi kesalahan
-            Swal.fire({
-              icon: "error",
-              title: "Kesalahan",
-              text: "Terjadi kesalahan saat mengirim pesan",
-            });
-          });
-      }
+  function onScroll() {
+    const sy = window.scrollY;
 
+    if (sy > 40) header?.classList.add('scrolled');
+    else header?.classList.remove('scrolled');
 
-/*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () => {
-  const scrollUp = document.getElementById("scroll-up");
-
-  this.scrollY >= 350 ? scrollUp.classList.add("show-scroll") : scrollUp.classList.remove("show-scroll");
-};
-window.addEventListener("scroll", scrollUp);
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll("section[id]");
-
-const scrollActive = () => {
-  const scrollY = window.scrollY;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute("id"),
-      sectionClass = document.querySelector(".nav__menu a[href*=" + sectionId + "]");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      sectionClass.classList.add("active-link");
-    } else {
-      sectionClass.classList.remove("active-link");
+    if (sy > 300 && sy > lastScrollY + 10 && !mobileNav?.classList.contains('open')) {
+      header?.classList.add('header--hidden');
+    } else if (sy < lastScrollY - 10 || sy <= 300) {
+      header?.classList.remove('header--hidden');
     }
+
+    lastScrollY = sy;
+
+    if (sy > 600) backToTop?.classList.add('visible');
+    else backToTop?.classList.remove('visible');
+
+    const scrollPos = window.pageYOffset + 200;
+    for (const sec of sections) {
+      const top = sec.offsetTop;
+      const h   = sec.offsetHeight;
+      const id  = sec.id;
+      if (scrollPos >= top && scrollPos < top + h) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        $(`.nav__link[href="#${id}"]`)?.classList.add('active');
+      }
+    }
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { onScroll(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+  onScroll();
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-};
-window.addEventListener("scroll", scrollActive);
-/*=============== DARK LIGHT THEME ===============*/
-const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
-const iconTheme = "ri-sun-line";
 
-//previously selected theme(if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
+  /* =========================================
+     MOBILE NAV
+     ========================================= */
+  $$('.mobile-nav__link').forEach((link, i) => {
+    link.style.transitionDelay = `${0.05 + i * 0.05}s`;
+  });
 
-//obtain current theme that has interface by validating light theme class in html
-const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
-const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line");
+  function openMobileNav() {
+    hamburger?.classList.add('active');
+    mobileNav?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
-//validate if user change theme light or dark theme
-if (selectedTheme) {
-  //if fullfilled, change theme mode
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
-  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](iconTheme);
-}
+  function closeMobileNav() {
+    hamburger?.classList.remove('active');
+    mobileNav?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-//activate or deactivate manually with theme button
-themeButton.addEventListener("click", () => {
-  //add or remove icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
+  hamburger?.addEventListener('click', () => {
+    mobileNav?.classList.contains('open') ? closeMobileNav() : openMobileNav();
+  });
 
-  //save theme and current icon that user choose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
-});
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 3000,
-  delay: 400,
-  // reset:true,
-});
-sr.reveal(`.home__profile, .about__image, .contact__mail`, { origin: "right" });
-sr.reveal(
-  `.home__name, .home__info, .about__container, 
-.section__title-1, .about__info, .contact__social, .contact__data`,
-  { origin: "left" }
-);
-sr.reveal(`#skills, .projects__card`, { interval: 100 });
+  mobileClose?.addEventListener('click', closeMobileNav);
 
-/*=============== MIXITUP FILTER PORTFOLIO ===============*/
-let mixerPortfolio = mixitup(".projects__container", {
-  selectors: {
-    target: ".projects__card",
-  },
-  animation: {
-    duration: 300,
-  },
-});
-/* Link active work */
-const linkWork = document.querySelectorAll(".work__items");
-function activeWork() {
-  linkWork.forEach((l) => l.classList.remove("active-work"));
-  this.classList.add("active-work");
-}
+  $$('.mobile-nav__link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMobileNav();
+      const target = $(link.getAttribute('href'));
+      target?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 
-linkWork.forEach((l) => l.addEventListener("click", activeWork));
+  /* =========================================
+     SMOOTH SCROLL (all anchors)
+     ========================================= */
+  $$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      if (href === '#') return window.scrollTo({ top: 0, behavior: 'smooth' });
+      $(href)?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* =========================================
+     MIXITUP
+     ========================================= */
+  let mixer;
+  const grid = $('#projectGrid');
+  if (grid && typeof mixitup !== 'undefined') {
+    mixer = mixitup(grid, {
+      selectors: { target: '.card' },
+      animation: {
+        duration: 350,
+        nudge: true,
+        reverseOut: false,
+        effects: 'fade translateY(16px) stagger(30ms)'
+      }
+    });
+  }
+
+  $$('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      $$('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  /* =========================================
+     CONTACT FORM → Google Sheets
+     ========================================= */
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwzW0i80mQWTN4HIhfAF3Led2z9Q6NjUUWWhkgOMSDC1xBJLm3mgL08MJShbPL8hKPHvw/exec';
+
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(contactForm);
+    if (!fd.get('nama') || !fd.get('email') || !fd.get('pesan')) {
+      return swalTheme('error', 'Oops...', 'Please fill in all fields.');
+    }
+
+    Swal.fire({
+      title: 'Sending…',
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      ...swalColors(),
+      willOpen: () => Swal.showLoading()
+    });
+
+    fetch(scriptURL, { method: 'POST', body: fd })
+      .then(() => {
+        swalTheme('success', 'Sent!', "Thank you! I'll get back to you soon.");
+        contactForm.reset();
+      })
+      .catch(() => swalTheme('error', 'Error', 'Something went wrong. Try again later.'));
+  });
+
+  function swalColors() {
+    const s = getComputedStyle(document.documentElement);
+    return {
+      background: s.getPropertyValue('--c-surface').trim(),
+      color: s.getPropertyValue('--c-heading').trim(),
+    };
+  }
+  function swalTheme(icon, title, text) {
+    Swal.fire({ icon, title, text, confirmButtonColor: '#6366f1', ...swalColors() });
+  }
+
+  /* =========================================
+     SCROLL REVEAL (Intersection Observer)
+     ========================================= */
+  function initReveal() {
+    const targets = [
+      '.hero__content', '.hero__visual',
+      '.about__text', '.info-card',
+      '.skill-category',
+      '.card',
+      '.contact__info', '.contact__form',
+      '.contact__link',
+      '.section-title',
+    ].join(',');
+
+    $$(targets).forEach(el => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    $$('.reveal').forEach(el => observer.observe(el));
+  }
+
+  requestAnimationFrame(() => requestAnimationFrame(initReveal));
+
+  /* =========================================
+     SUBTLE TILT ON CARDS
+     ========================================= */
+  $$('.info-card, .skill-category').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `perspective(800px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  /* =========================================
+     CONSOLE
+     ========================================= */
+  console.log('%c👋 Hello!', 'font-size:20px;color:#818cf8;font-weight:bold');
+  console.log('%cLet\'s build something great together.', 'font-size:14px;color:#a78bfa');
+  console.log('%c📧 asep.darmawan879@gmail.com', 'font-size:12px;color:#34d399');
+
+})();
