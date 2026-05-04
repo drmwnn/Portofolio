@@ -26,6 +26,7 @@
       <nav class="nav" id="nav">
         <a href="#home" class="nav__link active">Home</a>
         <a href="#about" class="nav__link">About</a>
+        <a href="#experience" class="nav__link">Experience</a>
         <a href="#skills" class="nav__link">Skills</a>
         <a href="#projects" class="nav__link">Projects</a>
         <a href="#contact" class="nav__link">Contact</a>
@@ -49,6 +50,7 @@
     <div class="mobile-nav__content">
       <a href="#home" class="mobile-nav__link">Home</a>
       <a href="#about" class="mobile-nav__link">About</a>
+      <a href="#experience" class="mobile-nav__link">Experience</a>
       <a href="#skills" class="mobile-nav__link">Skills</a>
       <a href="#projects" class="mobile-nav__link">Projects</a>
       <a href="#contact" class="mobile-nav__link">Contact</a>
@@ -94,20 +96,17 @@
       </div>
 
       <div class="hero__visual">
-        <div class="orbit">
-          <div class="orbit__ring orbit__ring--1">
-            <span class="orbit__dot" style="--d:0deg"><i class="ri-html5-fill"></i></span>
-            <span class="orbit__dot" style="--d:120deg"><i class="ri-css3-fill"></i></span>
-            <span class="orbit__dot" style="--d:240deg"><i class="ri-javascript-fill"></i></span>
+        <div class="hero__photo-wrapper">
+          <div class="hero__photo-glow"></div>
+          <div class="hero__photo">
+            <img src="assets/img/Asep D.png" alt="Asep Darmawan">
           </div>
-          <div class="orbit__ring orbit__ring--2">
-            <span class="orbit__dot" style="--d:60deg"><i class="ri-database-2-fill"></i></span>
-            <span class="orbit__dot" style="--d:180deg"><i class="ri-server-fill"></i></span>
-            <span class="orbit__dot" style="--d:300deg"><i class="ri-smartphone-fill"></i></span>
-          </div>
-          <div class="orbit__center">
-            <span>AD</span>
-          </div>
+          <div class="hero__photo-ring hero__photo-ring--1"></div>
+          <div class="hero__photo-ring hero__photo-ring--2"></div>
+          <!-- Floating tech badges -->
+          <span class="hero__float-badge hero__float-badge--1"><i class="ri-code-s-slash-fill"></i></span>
+          <span class="hero__float-badge hero__float-badge--2"><i class="ri-smartphone-fill"></i></span>
+          <span class="hero__float-badge hero__float-badge--3"><i class="ri-database-2-fill"></i></span>
         </div>
       </div>
     </div>
@@ -123,35 +122,104 @@
     <div class="container">
       <h2 class="section-title">About <span>Me</span></h2>
 
-      <div class="about__grid">
-        <div class="about__text">
-          <p>
-            I am a graduate of <strong>Informatics Engineering</strong> from
-            <strong>Tarumanagara University</strong>, specializing in web and mobile
-            app development. I have hands-on experience building applications with
-            geolocation features, facial recognition, and comprehensive portal systems.
-          </p>
-          <p>
-            I'm dedicated, creative, and passionate about solving complex problems —
-            crafting impactful solutions that make a real difference.
-          </p>
+      <div class="about__layout">
+        <!-- Left: Photo with decorative elements -->
+        <div class="about__photo-col">
+          <div class="about__photo">
+            <img src="assets/img/Asep.png" alt="Asep Darmawan">
+          </div>
+          <div class="about__photo-accent"></div>
         </div>
 
-        <div class="about__cards">
-          <div class="info-card">
-            <div class="info-card__icon"><i class="ri-graduation-cap-fill"></i></div>
-            <h3>Education</h3>
-            <p>Informatics Engineering<br><small>Tarumanagara University</small></p>
+        <!-- Right: Bio + Stats -->
+        <div class="about__info-col">
+          <div class="about__bio">
+            <p>
+              I am a graduate of <strong>Computer Science</strong> from
+              <strong>Tarumanagara University</strong>, specializing in web and mobile
+              app development. I have hands-on experience building applications with
+              geolocation features, facial recognition, and comprehensive portal systems.
+            </p>
+            <p>
+              I'm dedicated, creative, and passionate about solving complex problems —
+              crafting impactful solutions that make a real difference.
+            </p>
           </div>
-          <div class="info-card">
-            <div class="info-card__icon"><i class="ri-terminal-box-fill"></i></div>
-            <h3>15+ Projects</h3>
-            <p>Web, Mobile, Desktop &amp; Games</p>
+
+          <div class="about__stats">
+            <div class="stat-card">
+              <div class="stat-card__number">S1</div>
+              <div class="stat-card__info">
+                <span class="stat-card__label">Computer Science</span>
+                <span class="stat-card__sub">Tarumanagara University</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__number">16<span>+</span></div>
+              <div class="stat-card__info">
+                <span class="stat-card__label">Projects</span>
+                <span class="stat-card__sub">Web, Mobile, Desktop & Games</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__number">10<span>+</span></div>
+              <div class="stat-card__info">
+                <span class="stat-card__label">Technologies</span>
+                <span class="stat-card__sub">Full Stack Development</span>
+              </div>
+            </div>
           </div>
-          <div class="info-card">
-            <div class="info-card__icon"><i class="ri-stack-fill"></i></div>
-            <h3>10+ Technologies</h3>
-            <p>Full Stack Development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <h2 class="section-title">Work <span>Experience</span></h2>
+
+      <div class="exp-grid">
+        <!-- Card 1 — Latest -->
+        <div class="exp-card">
+          <div class="exp-card__top">
+            <span class="exp-card__num">01</span>
+            <span class="exp-card__status exp-card__status--active"><i class="ri-flashlight-fill"></i> Current</span>
+          </div>
+          <h3 class="exp-card__role">Full Stack Developer</h3>
+          <span class="exp-card__company"><i class="ri-building-2-fill"></i> Badan Siber dan Sandi Negara (BSSN)</span>
+          <span class="exp-card__date"><i class="ri-calendar-line"></i> Nov 2025 — Present</span>
+          <ul class="exp-card__tasks">
+            <li>Built an end-to-end IT Security Assessment platform — managing PSE, asset inventory, and scheduling.</li>
+            <li>Developed a vulnerability management & ticketing system for tracking findings, severity classification, and remediation.</li>
+            <li>Implemented centralized reporting, multi-user collaboration with RBAC, and real-time notifications.</li>
+          </ul>
+          <div class="exp-card__tags">
+            <span>Laravel</span>
+            <span>PostgreSQL</span>
+            <span>REST API</span>
+            <span>RBAC</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="exp-card">
+          <div class="exp-card__top">
+            <span class="exp-card__num">02</span>
+            <span class="exp-card__status"><i class="ri-check-line"></i> Completed</span>
+          </div>
+          <h3 class="exp-card__role">Mobile Developer</h3>
+          <span class="exp-card__company"><i class="ri-building-2-fill"></i> The House of Representatives, Republic of Indonesia (DPR RI)</span>
+          <span class="exp-card__date"><i class="ri-calendar-line"></i> Feb 2024 — Jun 2024</span>
+          <ul class="exp-card__tasks">
+            <li>Developed a mobile attendance app with geolocation tracking and face recognition.</li>
+            <li>Built a portal app displaying agendas, profiles, dashboards, news, and announcements for DPR members & staff.</li>
+          </ul>
+          <div class="exp-card__tags">
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>REST API</span>
+            <span>Geolocation</span>
           </div>
         </div>
       </div>
@@ -297,6 +365,56 @@
 
       <div class="projects__grid" id="projectGrid">
         <!-- 1 -->
+        <article class="card mix mobile">
+          <div class="card__img">
+            <img src="assets/img/portal.png" alt="Portal DPR RI" loading="lazy">
+            <div class="card__actions">
+              <a href="https://www.figma.com/proto/uDUZ0ZeJcMBQP0NhR1vmMN/PORTAL-DPR-RI?node-id=495-4137&p=f&t=NNEA8g3aWBMLkHvL-0&scaling=scale-down&content-scaling=fixed&page-id=124%3A11&starting-point-node-id=495%3A4076" target="_blank" rel="noopener"><i class="ri-eye-line"></i></a>
+              <a href="https://www.figma.com/design/uDUZ0ZeJcMBQP0NhR1vmMN/PORTAL-DPR-RI" target="_blank" rel="noopener"><i class="ri-figma-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Mobile App</span>
+            <h3>Portal DPR RI</h3>
+            <p>Mobile portal for DPR RI members &amp; ASN parliament staff.</p>
+            <div class="card__tech"><span>Mobile</span><span>DPR RI</span><span>Figma</span></div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="card mix web">
+          <div class="card__img">
+            <img src="assets/img/sai.png" alt="CV Star Ayres Indonesia" loading="lazy">
+            <div class="card__actions">
+              <a href="https://starayresindonesia.com/" target="_blank" rel="noopener"><i class="ri-external-link-line"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Website</span>
+            <h3>CV Star Ayres Indonesia</h3>
+            <p>Company profile website for CV Star Ayres Indonesia.</p>
+            <div class="card__tech"><span>Web</span><span>Company Profile</span></div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="card mix mobile">
+          <div class="card__img">
+            <img src="assets/img/absensi.png" alt="Absensi MDRR" loading="lazy">
+            <div class="card__actions">
+              <a href="https://www.figma.com/proto/3ERDOLo5g2e37F9AGe3fY3/ABSENSI-MDRR?node-id=1-611&p=f&t=uXe9MFTDYASQp7Kg-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A83" target="_blank" rel="noopener"><i class="ri-eye-line"></i></a>
+              <a href="https://www.figma.com/design/3ERDOLo5g2e37F9AGe3fY3/ABSENSI-MDRR" target="_blank" rel="noopener"><i class="ri-figma-fill"></i></a>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Mobile App</span>
+            <h3>Absensi MDRR</h3>
+            <p>Attendance app with facial recognition &amp; geolocation tracking.</p>
+            <div class="card__tech"><span>Face Recognition</span><span>Geolocation</span><span>Mobile</span></div>
+          </div>
+        </article>
+
+        <!-- 3 -->
         <article class="card mix web">
           <div class="card__img">
             <img src="assets/img/Codashop.png" alt="Codashop Clone" loading="lazy">
@@ -313,7 +431,7 @@
           </div>
         </article>
 
-        <!-- 2 -->
+        <!-- 3 -->
         <article class="card mix web">
           <div class="card__img">
             <img src="assets/img/javaspring.png" alt="Food Ordering" loading="lazy">
@@ -330,7 +448,7 @@
           </div>
         </article>
 
-        <!-- 3 -->
+        <!-- 4 -->
         <article class="card mix desktop">
           <div class="card__img">
             <img src="assets/img/Hospital.png" alt="Hospital Management" loading="lazy">
@@ -347,7 +465,7 @@
           </div>
         </article>
 
-        <!-- 4 -->
+        <!-- 5 -->
         <article class="card mix web">
           <div class="card__img">
             <img src="assets/img/AsdarrID.png" alt="AsdarrID" loading="lazy">
@@ -364,7 +482,7 @@
           </div>
         </article>
 
-        <!-- 5 -->
+        <!-- 6 -->
         <article class="card mix mobile">
           <div class="card__img">
             <img src="assets/img/Twitter.png" alt="Twitter Clone" loading="lazy">
@@ -381,7 +499,7 @@
           </div>
         </article>
 
-        <!-- 6 -->
+        <!-- 7 -->
         <article class="card mix game">
           <div class="card__img">
             <img src="assets/img/Game1.png" alt="2D Game" loading="lazy">
@@ -398,7 +516,7 @@
           </div>
         </article>
 
-        <!-- 7 -->
+        <!-- 8 -->
         <article class="card mix web">
           <div class="card__img">
             <img src="assets/img/Movie DB.png" alt="Movie DB" loading="lazy">
@@ -415,7 +533,7 @@
           </div>
         </article>
 
-        <!-- 8 -->
+        <!-- 9 -->
         <article class="card mix desktop">
           <div class="card__img">
             <img src="assets/img/FX.png" alt="Top Up Game" loading="lazy">
@@ -432,7 +550,7 @@
           </div>
         </article>
 
-        <!-- 9 -->
+        <!-- 10 -->
         <article class="card mix game">
           <div class="card__img">
             <img src="assets/img/Game2.png" alt="Game 2" loading="lazy">
