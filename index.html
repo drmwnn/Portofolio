@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -32,6 +32,10 @@
         <a href="#contact" class="nav__link">Contact</a>
       </nav>
       <span class="header__sep"></span>
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-toggle__label" id="langLabel">EN</span>
+      </button>
+      <span class="header__sep"></span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
       </button>
@@ -62,6 +66,9 @@
         <a href="https://wa.me/6285877888837" target="_blank" rel="noopener"><i class="ri-whatsapp-fill"></i></a>
         <a href="https://www.instagram.com/drmwn67/" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
       </div>
+      <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" aria-label="Toggle language">
+        <span class="lang-toggle__label" id="langLabelMobile">EN</span>
+      </button>
       <button class="theme-toggle theme-toggle--mobile" id="themeToggleMobile" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
       </button>
@@ -74,24 +81,24 @@
       <div class="hero__content">
         <div class="hero__label">
           <span class="pulse-dot"></span>
-          Available for work
+          <span data-i18n="hero.available">Available for work</span>
         </div>
 
         <h1 class="hero__title">
-          I'm <strong>Asep Darmawan</strong>,<br>
-          a <em>Full Stack</em> Developer.
+          <span data-i18n="hero.greeting">I'm</span> <strong>Asep Darmawan</strong>,<br>
+          <span data-i18n="hero.role">a <em>Full Stack</em> Developer.</span>
         </h1>
 
-        <p class="hero__text">
+        <p class="hero__text" data-i18n="hero.text">
           I build polished web &amp; mobile applications with clean architecture,
           modern technologies, and a keen eye for user experience.
         </p>
 
         <div class="hero__buttons">
           <a href="#projects" class="btn btn--fill">
-            View Projects <i class="ri-arrow-down-line"></i>
+            <span data-i18n="hero.cta1">View Projects</span> <i class="ri-arrow-down-line"></i>
           </a>
-          <a href="#contact" class="btn btn--outline">Get in Touch</a>
+          <a href="#contact" class="btn btn--outline" data-i18n="hero.cta2">Get in Touch</a>
         </div>
       </div>
 
@@ -120,7 +127,7 @@
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about">
     <div class="container">
-      <h2 class="section-title">About <span>Me</span></h2>
+      <h2 class="section-title"><span data-i18n="about.title">About</span> <span class="gradient-text" data-i18n="about.titleSpan">Me</span></h2>
 
       <div class="about__layout">
         <!-- Left: Photo with decorative elements -->
@@ -134,14 +141,14 @@
         <!-- Right: Bio + Stats -->
         <div class="about__info-col">
           <div class="about__bio">
-            <p>
+            <p data-i18n="about.bio1">
               <strong>Computer Science</strong> graduate from <strong>Tarumanagara University</strong>
               with experience in web and mobile application development. Worked as a
               <strong>Full-Stack Developer</strong> at <strong>BSSN</strong>, building an end-to-end
               IT Security Assessment platform including vulnerability management, ticketing,
               and reporting systems.
             </p>
-            <p>
+            <p data-i18n="about.bio2">
               Also developed mobile applications with geolocation tracking, face recognition,
               and internal portal systems for organizational use.
             </p>
@@ -151,22 +158,22 @@
             <div class="stat-card">
               <div class="stat-card__number">S1</div>
               <div class="stat-card__info">
-                <span class="stat-card__label">Computer Science</span>
+                <span class="stat-card__label" data-i18n="about.stat1label">Computer Science</span>
                 <span class="stat-card__sub">Tarumanagara University</span>
               </div>
             </div>
             <div class="stat-card">
               <div class="stat-card__number">16<span>+</span></div>
               <div class="stat-card__info">
-                <span class="stat-card__label">Projects</span>
-                <span class="stat-card__sub">Web, Mobile, Desktop & Games</span>
+                <span class="stat-card__label" data-i18n="about.stat2label">Projects</span>
+                <span class="stat-card__sub" data-i18n="about.stat2sub">Web, Mobile, Desktop &amp; Games</span>
               </div>
             </div>
             <div class="stat-card">
               <div class="stat-card__number">10<span>+</span></div>
               <div class="stat-card__info">
-                <span class="stat-card__label">Technologies</span>
-                <span class="stat-card__sub">Full Stack Development</span>
+                <span class="stat-card__label" data-i18n="about.stat3label">Technologies</span>
+                <span class="stat-card__sub" data-i18n="about.stat3sub">Full Stack Development</span>
               </div>
             </div>
           </div>
@@ -178,22 +185,22 @@
   <!-- ============ EXPERIENCE ============ -->
   <section class="experience" id="experience">
     <div class="container">
-      <h2 class="section-title">Work <span>Experience</span></h2>
+      <h2 class="section-title"><span data-i18n="exp.title">Work</span> <span class="gradient-text" data-i18n="exp.titleSpan">Experience</span></h2>
 
       <div class="exp-grid">
         <!-- Card 1 — Latest -->
         <div class="exp-card">
           <div class="exp-card__top">
             <span class="exp-card__num">01</span>
-            <span class="exp-card__status exp-card__status--active"><i class="ri-flashlight-fill"></i> Current</span>
+            <span class="exp-card__status exp-card__status--active"><i class="ri-flashlight-fill"></i> <span data-i18n="exp.current">Current</span></span>
           </div>
-          <h3 class="exp-card__role">Full Stack Developer</h3>
-          <span class="exp-card__company"><i class="ri-building-2-fill"></i> Badan Siber dan Sandi Negara (BSSN)</span>
-          <span class="exp-card__date"><i class="ri-calendar-line"></i> Nov 2025 — Present</span>
+          <h3 class="exp-card__role" data-i18n="exp1.role">Full Stack Developer</h3>
+          <span class="exp-card__company"><i class="ri-building-2-fill"></i> <span data-i18n="exp1.company">Badan Siber dan Sandi Negara (BSSN)</span></span>
+          <span class="exp-card__date"><i class="ri-calendar-line"></i> <span data-i18n="exp1.date">Nov 2025 — Present</span></span>
           <ul class="exp-card__tasks">
-            <li>Built an end-to-end IT Security Assessment platform — managing PSE, asset inventory, and scheduling.</li>
-            <li>Developed a vulnerability management & ticketing system for tracking findings, severity classification, and remediation.</li>
-            <li>Implemented centralized reporting, multi-user collaboration with RBAC, and real-time notifications.</li>
+            <li data-i18n="exp1.task1">Built an end-to-end IT Security Assessment platform — managing PSE, asset inventory, and scheduling.</li>
+            <li data-i18n="exp1.task2">Developed a vulnerability management &amp; ticketing system for tracking findings, severity classification, and remediation.</li>
+            <li data-i18n="exp1.task3">Implemented centralized reporting, multi-user collaboration with RBAC, and real-time notifications.</li>
           </ul>
           <div class="exp-card__tags">
             <span>Laravel</span>
@@ -207,14 +214,14 @@
         <div class="exp-card">
           <div class="exp-card__top">
             <span class="exp-card__num">02</span>
-            <span class="exp-card__status"><i class="ri-check-line"></i> Completed</span>
+            <span class="exp-card__status"><i class="ri-check-line"></i> <span data-i18n="exp.completed">Completed</span></span>
           </div>
-          <h3 class="exp-card__role">Mobile Developer</h3>
-          <span class="exp-card__company"><i class="ri-building-2-fill"></i> The House of Representatives, Republic of Indonesia (DPR RI)</span>
-          <span class="exp-card__date"><i class="ri-calendar-line"></i> Feb 2024 — Jun 2024</span>
+          <h3 class="exp-card__role" data-i18n="exp2.role">Mobile Developer</h3>
+          <span class="exp-card__company"><i class="ri-building-2-fill"></i> <span data-i18n="exp2.company">The House of Representatives, Republic of Indonesia (DPR RI)</span></span>
+          <span class="exp-card__date"><i class="ri-calendar-line"></i> <span data-i18n="exp2.date">Feb 2024 — Jun 2024</span></span>
           <ul class="exp-card__tasks">
-            <li>Developed a mobile attendance app with geolocation tracking and face recognition.</li>
-            <li>Built a portal app displaying agendas, profiles, dashboards, news, and announcements for DPR members & staff.</li>
+            <li data-i18n="exp2.task1">Developed a mobile attendance app with geolocation tracking and face recognition.</li>
+            <li data-i18n="exp2.task2">Built a portal app displaying agendas, profiles, dashboards, news, and announcements for DPR members &amp; staff.</li>
           </ul>
           <div class="exp-card__tags">
             <span>Flutter</span>
@@ -231,7 +238,7 @@
   <!-- ============ SKILLS ============ -->
   <section class="skills" id="skills">
     <div class="container">
-      <h2 class="section-title">Tech <span>Stack</span></h2>
+      <h2 class="section-title"><span data-i18n="skills.title">Tech</span> <span class="gradient-text" data-i18n="skills.titleSpan">Stack</span></h2>
 
       <div class="skills__grid">
         <!-- Programming Languages -->
@@ -355,7 +362,7 @@
   <!-- ============ PROJECTS ============ -->
   <section class="projects" id="projects">
     <div class="container">
-      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <h2 class="section-title"><span data-i18n="projects.title">Featured</span> <span class="gradient-text" data-i18n="projects.titleSpan">Projects</span></h2>
 
       <div class="projects__filters">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -581,13 +588,22 @@
           <div class="cv-cta__icon">
             <i class="ri-file-text-fill"></i>
           </div>
-          <h2 class="cv-cta__title">Download My <span>Resume</span></h2>
-          <p class="cv-cta__text">
+          <h2 class="cv-cta__title"><span data-i18n="cv.title">Download My</span> <span>Resume</span></h2>
+          <p class="cv-cta__text" data-i18n="cv.text">
             Get a detailed overview of my skills, experience, and qualifications in a single document.
           </p>
-          <a href="assets/CV ASEP DARMAWAN.pdf" download class="btn btn--fill cv-cta__btn">
-            <i class="ri-download-2-line"></i> Download CV
-          </a>
+          <div class="cv-cta__buttons">
+            <a href="assets/CV ASEP DARMAWAN (eng).pdf" download id="cvBtnEng" class="btn btn--fill cv-cta__btn">
+              <i class="ri-download-2-line"></i>
+              <span>English CV</span>
+              <span class="cv-btn__flag">🇺🇸</span>
+            </a>
+            <a href="assets/CV ASEP DARMAWAN (id).pdf" download id="cvBtnId" class="btn btn--outline cv-cta__btn">
+              <i class="ri-download-2-line"></i>
+              <span>CV Indonesia</span>
+              <span class="cv-btn__flag">🇮🇩</span>
+            </a>
+          </div>
         </div>
         <!-- Decorative floating shapes -->
         <div class="cv-cta__shape cv-cta__shape--1"></div>
@@ -600,11 +616,11 @@
   <!-- ============ CONTACT ============ -->
   <section class="contact" id="contact">
     <div class="container">
-      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <h2 class="section-title"><span data-i18n="contact.title">Let's</span> <span class="gradient-text" data-i18n="contact.titleSpan">Connect</span></h2>
 
       <div class="contact__grid">
         <div class="contact__info">
-          <p class="contact__lead">
+          <p class="contact__lead" data-i18n="contact.lead">
             Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
 
@@ -636,18 +652,18 @@
         <form class="contact__form" id="contactForm" name="submit-to-google-sheet">
           <div class="input-group">
             <input type="text" name="nama" id="name" placeholder=" " required>
-            <label for="name">Your Name</label>
+            <label for="name" data-i18n="contact.name">Your Name</label>
           </div>
           <div class="input-group">
             <input type="email" name="email" id="email" placeholder=" " required>
-            <label for="email">Email Address</label>
+            <label for="email" data-i18n="contact.email">Email Address</label>
           </div>
           <div class="input-group">
             <textarea name="pesan" id="message" rows="5" placeholder=" " required></textarea>
-            <label for="message">Message</label>
+            <label for="message" data-i18n="contact.message">Message</label>
           </div>
           <button type="submit" class="btn btn--fill btn--block">
-            Send Message <i class="ri-send-plane-fill"></i>
+            <span data-i18n="contact.send">Send Message</span> <i class="ri-send-plane-fill"></i>
           </button>
         </form>
       </div>
@@ -657,7 +673,7 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 <strong>Asep Darmawan</strong>. Built with ☕ and passion.</p>
+      <p>&copy; 2025 <strong>Asep Darmawan</strong>. <span data-i18n="footer.text">Built with ☕ and passion.</span></p>
       <div class="footer__links">
         <a href="https://github.com/drmwnn" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener">LinkedIn</a>
