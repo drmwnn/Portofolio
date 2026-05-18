@@ -1554,56 +1554,54 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 11px;
+  padding: 5px 12px;
   border-radius: 100px;
-  background: transparent;
-  border: none;
+  background: rgba(129,140,248,.12);
+  border: 1px solid rgba(129,140,248,.35);
   cursor: pointer;
-  transition: color .2s ease, background .2s ease;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
 .lang-toggle__label {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: .04em;
-  color: rgba(255,255,255,.55);
+  letter-spacing: .06em;
+  color: var(--c-accent);
   font-family: var(--font-heading);
   transition: color .2s ease;
 }
-[data-theme="light"] .lang-toggle__label {
-  color: rgba(0,0,0,.45);
+[data-theme="light"] .lang-toggle {
+  background: rgba(99,102,241,.08);
+  border-color: rgba(99,102,241,.3);
 }
-.lang-toggle:hover .lang-toggle__label {
-  color: var(--c-accent);
+[data-theme="light"] .lang-toggle__label {
+  color: var(--c-accent-2);
 }
 .lang-toggle:hover {
-  background: rgba(255,255,255,.06);
+  background: rgba(129,140,248,.22);
+  border-color: var(--c-accent);
+  transform: translateY(-1px);
 }
 [data-theme="light"] .lang-toggle:hover {
-  background: rgba(0,0,0,.04);
-}
-/* Active state when language is selected */
-.lang-toggle.active .lang-toggle__label {
-  color: var(--c-accent);
+  background: rgba(99,102,241,.14);
 }
 
 /* Mobile lang toggle */
 .lang-toggle--mobile {
   width: 44px; height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--c-border);
+  border: 1.5px solid rgba(129,140,248,.45);
+  background: rgba(129,140,248,.1);
   padding: 0;
   justify-content: center;
 }
 .lang-toggle--mobile .lang-toggle__label {
-  font-size: 11px;
-  color: var(--c-text-2);
+  font-size: 11.5px;
+  color: var(--c-accent);
 }
 .lang-toggle--mobile:hover {
+  background: rgba(129,140,248,.22);
   border-color: var(--c-accent);
-  background: var(--c-glow);
-}
-.lang-toggle--mobile:hover .lang-toggle__label {
-  color: var(--c-accent);
+  transform: none;
 }
 
 /* =============== CV DUAL BUTTONS =============== */

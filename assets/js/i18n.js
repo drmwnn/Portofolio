@@ -9,6 +9,14 @@
   /* ---------- Translations ---------- */
   const translations = {
     en: {
+      /* Nav */
+      'nav.home':       'Home',
+      'nav.about':      'About',
+      'nav.experience': 'Experience',
+      'nav.skills':     'Skills',
+      'nav.projects':   'Projects',
+      'nav.contact':    'Contact',
+
       /* Hero */
       'hero.available': 'Available for work',
       'hero.greeting':  "I'm",
@@ -20,9 +28,9 @@
       /* About */
       'about.title':      'About',
       'about.titleSpan':  'Me',
-      'about.bio1':       '<strong>Computer Science</strong> graduate from <strong>Tarumanagara University</strong> with experience in web and mobile application development. Worked as a <strong>Full-Stack Developer</strong> at <strong>BSSN</strong>, building an end-to-end IT Security Assessment platform including vulnerability management, ticketing, and reporting systems.',
+      'about.bio1':       '<strong>Informatics Engineering</strong> graduate from <strong>Tarumanagara University</strong> with experience in web and mobile application development. Worked as a <strong>Full-Stack Developer</strong> at <strong>BSSN</strong>, building an end-to-end IT Security Assessment platform including vulnerability management, ticketing, and reporting systems.',
       'about.bio2':       'Also developed mobile applications with geolocation tracking, face recognition, and internal portal systems for organizational use.',
-      'about.stat1label': 'Computer Science',
+      'about.stat1label': 'Informatics Engineering',
       'about.stat2label': 'Projects',
       'about.stat2sub':   'Web, Mobile, Desktop & Games',
       'about.stat3label': 'Technologies',
@@ -36,7 +44,7 @@
       'exp1.role':      'Full Stack Developer',
       'exp1.company':   'Badan Siber dan Sandi Negara (BSSN)',
       'exp1.date':      'Nov 2025 — Present',
-      'exp1.task1':     'Built an end-to-end IT Security Assessment platform — managing PSE, asset inventory, and scheduling.',
+      'exp1.task1':     'Built an IT Security Assessment platform — managing PSE, asset inventory, scheduling, and multi-organization coordination.',
       'exp1.task2':     'Developed a vulnerability management & ticketing system for tracking findings, severity classification, and remediation.',
       'exp1.task3':     'Implemented centralized reporting, multi-user collaboration with RBAC, and real-time notifications.',
       'exp2.role':      'Mobile Developer',
@@ -52,6 +60,32 @@
       /* Projects */
       'projects.title':     'Featured',
       'projects.titleSpan': 'Projects',
+
+      /* Filter */
+      'filter.all': 'All',
+
+      /* Card Tags */
+      'tag.mobile':      'Mobile App',
+      'tag.website':     'Website',
+      'tag.webapp':      'Web App',
+      'tag.desktop':     'Desktop',
+      'tag.webplatform': 'Web Platform',
+      'tag.mobileapp':   'Mobile',
+      'tag.game':        'Game',
+
+      /* Project Descriptions */
+      'proj1.desc':  'Mobile portal for DPR RI members & ASN parliament staff.',
+      'proj2.desc':  'Company profile website for CV Star Ayres Indonesia.',
+      'proj3.desc':  'Attendance app with facial recognition & geolocation tracking.',
+      'proj4.desc':  'Game top-up platform built with Node.js, MongoDB, and EJS.',
+      'proj5.desc':  'Online food ordering with Java Spring & MySQL.',
+      'proj6.desc':  'Comprehensive hospital management with JavaFX and MySQL.',
+      'proj7.desc':  'Gaming top-up platform with modern UI.',
+      'proj8.desc':  'Social media app built with Dart & Flutter.',
+      'proj9.desc':  'Unity-based 2D game built with C#.',
+      'proj10.desc': 'Movie search app powered by TMDB API.',
+      'proj11.desc': 'JavaFX desktop application for game top-ups.',
+      'proj12.desc': 'Unity game development project.',
 
       /* CV */
       'cv.title': 'Download My',
@@ -71,6 +105,14 @@
     },
 
     id: {
+      /* Nav */
+      'nav.home':       'Beranda',
+      'nav.about':      'Tentang',
+      'nav.experience': 'Pengalaman',
+      'nav.skills':     'Keahlian',
+      'nav.projects':   'Proyek',
+      'nav.contact':    'Kontak',
+
       /* Hero */
       'hero.available': 'Tersedia untuk bekerja',
       'hero.greeting':  'Saya',
@@ -82,9 +124,9 @@
       /* About */
       'about.title':      'Tentang',
       'about.titleSpan':  'Saya',
-      'about.bio1':       'Lulusan <strong>Ilmu Komputer</strong> dari <strong>Universitas Tarumanagara</strong> dengan pengalaman di bidang pengembangan aplikasi web dan mobile. Pernah bekerja sebagai <strong>Full-Stack Developer</strong> di <strong>BSSN</strong>, membangun platform Penilaian Keamanan IT secara end-to-end mencakup manajemen kerentanan, tiket, dan pelaporan.',
+      'about.bio1':       'Lulusan <strong>Teknik Informatika</strong> dari <strong>Universitas Tarumanagara</strong> dengan pengalaman di bidang pengembangan aplikasi web dan mobile. Pernah bekerja sebagai <strong>Full-Stack Developer</strong> di <strong>BSSN</strong>, membangun platform IT Security Assessment secara end-to-end mencakup manajemen kerentanan, tiket, dan pelaporan.',
       'about.bio2':       'Juga mengembangkan aplikasi mobile dengan pelacakan geolokasi, pengenalan wajah, dan sistem portal internal untuk keperluan organisasi.',
-      'about.stat1label': 'Ilmu Komputer',
+      'about.stat1label': 'Teknik Informatika',
       'about.stat2label': 'Proyek',
       'about.stat2sub':   'Web, Mobile, Desktop & Game',
       'about.stat3label': 'Teknologi',
@@ -98,13 +140,13 @@
       'exp1.role':      'Full Stack Developer',
       'exp1.company':   'Badan Siber dan Sandi Negara (BSSN)',
       'exp1.date':      'Nov 2025 — Sekarang',
-      'exp1.task1':     'Membangun platform Penilaian Keamanan IT end-to-end — mengelola PSE, inventaris aset, dan penjadwalan.',
+      'exp1.task1':     'Membangun platform IT Security Assessment — mengelola PSE, inventaris aset, penjadwalan, dan koordinasi multi-organisasi.',
       'exp1.task2':     'Mengembangkan sistem manajemen kerentanan & tiket untuk melacak temuan, klasifikasi tingkat keparahan, dan remediasi.',
       'exp1.task3':     'Mengimplementasikan pelaporan terpusat, kolaborasi multi-pengguna dengan RBAC, dan notifikasi real-time.',
       'exp2.role':      'Mobile Developer',
       'exp2.company':   'Dewan Perwakilan Rakyat Republik Indonesia (DPR RI)',
       'exp2.date':      'Feb 2024 — Jun 2024',
-      'exp2.task1':     'Mengembangkan aplikasi absensi mobile dengan pelacakan geolokasi dan pengenalan wajah.',
+      'exp2.task1':     'Mengembangkan aplikasi absensi mobile dengan fitur geolocation dan pengenalan wajah.',
       'exp2.task2':     'Membangun aplikasi portal yang menampilkan agenda, profil, dasbor, berita, dan pengumuman untuk anggota dan staf DPR.',
 
       /* Skills */
@@ -114,6 +156,32 @@
       /* Projects */
       'projects.title':     'Proyek',
       'projects.titleSpan': 'Unggulan',
+
+      /* Filter */
+      'filter.all': 'Semua',
+
+      /* Card Tags */
+      'tag.mobile':      'Aplikasi Mobile',
+      'tag.website':     'Website',
+      'tag.webapp':      'Aplikasi Web',
+      'tag.desktop':     'Desktop',
+      'tag.webplatform': 'Platform Web',
+      'tag.mobileapp':   'Mobile',
+      'tag.game':        'Game',
+
+      /* Project Descriptions */
+      'proj1.desc':  'Portal mobile untuk anggota DPR RI dan staf ASN parlemen.',
+      'proj2.desc':  'Website company profile untuk CV Star Ayres Indonesia.',
+      'proj3.desc':  'Aplikasi absensi dengan pengenalan wajah & pelacakan geolokasi.',
+      'proj4.desc':  'Platform top-up game dibangun dengan Node.js, MongoDB, dan EJS.',
+      'proj5.desc':  'Sistem pemesanan makanan online dengan Java Spring & MySQL.',
+      'proj6.desc':  'Manajemen rumah sakit komprehensif dengan JavaFX dan MySQL.',
+      'proj7.desc':  'Platform top-up game dengan tampilan UI modern.',
+      'proj8.desc':  'Aplikasi media sosial dibangun dengan Dart & Flutter.',
+      'proj9.desc':  'Game 2D berbasis Unity dibangun dengan C#.',
+      'proj10.desc': 'Aplikasi pencarian film berbasis TMDB API.',
+      'proj11.desc': 'Aplikasi desktop JavaFX untuk top-up game.',
+      'proj12.desc': 'Proyek pengembangan game Unity.',
 
       /* CV */
       'cv.title': 'Unduh',
@@ -133,15 +201,15 @@
     }
   };
 
-  /* Keys that contain HTML (innerHTML) instead of plain text */
+  /* Keys that render HTML (innerHTML) instead of plain text */
   const htmlKeys = new Set([
     'hero.role', 'about.bio1', 'about.bio2'
   ]);
 
   /* ---------- State ---------- */
-  const root       = document.documentElement;
-  const savedLang  = localStorage.getItem('lang') || 'en';
-  let   currentLang = savedLang;
+  const root      = document.documentElement;
+  const savedLang = localStorage.getItem('lang') || 'en';
+  let currentLang = savedLang;
 
   /* ---------- Apply translations ---------- */
   function applyLang(lang) {
@@ -158,22 +226,16 @@
       }
     });
 
-    /* html lang attribute */
+    /* html attributes */
     root.setAttribute('lang', lang);
     root.setAttribute('data-lang', lang);
 
     /* Update toggle labels */
-    const label     = document.documentElement.lang;
-    const display   = lang === 'en' ? 'EN' : 'ID';
-    const labelEl   = document.getElementById('langLabel');
-    const labelElM  = document.getElementById('langLabelMobile');
+    const display  = lang === 'en' ? 'EN' : 'ID';
+    const labelEl  = document.getElementById('langLabel');
+    const labelElM = document.getElementById('langLabelMobile');
     if (labelEl)  labelEl.textContent  = display;
     if (labelElM) labelElM.textContent = display;
-
-    /* Highlight active toggles */
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
 
     currentLang = lang;
     localStorage.setItem('lang', lang);
@@ -184,7 +246,7 @@
     applyLang(currentLang === 'en' ? 'id' : 'en');
   }
 
-  /* ---------- Bind buttons ---------- */
+  /* ---------- Bind ---------- */
   document.getElementById('langToggle')?.addEventListener('click', toggleLang);
   document.getElementById('langToggleMobile')?.addEventListener('click', toggleLang);
 

@@ -24,12 +24,12 @@
   <header class="header" id="header">
     <div class="header__bar">
       <nav class="nav" id="nav">
-        <a href="#home" class="nav__link active">Home</a>
-        <a href="#about" class="nav__link">About</a>
-        <a href="#experience" class="nav__link">Experience</a>
-        <a href="#skills" class="nav__link">Skills</a>
-        <a href="#projects" class="nav__link">Projects</a>
-        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#home" class="nav__link active" data-i18n="nav.home">Home</a>
+        <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
+        <a href="#experience" class="nav__link" data-i18n="nav.experience">Experience</a>
+        <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
       </nav>
       <span class="header__sep"></span>
       <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
@@ -52,12 +52,12 @@
       <i class="ri-close-line"></i>
     </button>
     <div class="mobile-nav__content">
-      <a href="#home" class="mobile-nav__link">Home</a>
-      <a href="#about" class="mobile-nav__link">About</a>
-      <a href="#experience" class="mobile-nav__link">Experience</a>
-      <a href="#skills" class="mobile-nav__link">Skills</a>
-      <a href="#projects" class="mobile-nav__link">Projects</a>
-      <a href="#contact" class="mobile-nav__link">Contact</a>
+      <a href="#home" class="mobile-nav__link" data-i18n="nav.home">Home</a>
+      <a href="#about" class="mobile-nav__link" data-i18n="nav.about">About</a>
+      <a href="#experience" class="mobile-nav__link" data-i18n="nav.experience">Experience</a>
+      <a href="#skills" class="mobile-nav__link" data-i18n="nav.skills">Skills</a>
+      <a href="#projects" class="mobile-nav__link" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="mobile-nav__link" data-i18n="nav.contact">Contact</a>
     </div>
     <div class="mobile-nav__footer">
       <div class="mobile-nav__socials">
@@ -365,7 +365,7 @@
       <h2 class="section-title"><span data-i18n="projects.title">Featured</span> <span class="gradient-text" data-i18n="projects.titleSpan">Projects</span></h2>
 
       <div class="projects__filters">
-        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
         <button class="filter-btn" data-filter=".web">Web</button>
         <button class="filter-btn" data-filter=".desktop">Desktop</button>
         <button class="filter-btn" data-filter=".mobile">Mobile</button>
@@ -383,9 +383,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Mobile App</span>
+            <span class="card__tag" data-i18n="tag.mobile">Mobile App</span>
             <h3>Portal DPR RI</h3>
-            <p>Mobile portal for DPR RI members &amp; ASN parliament staff.</p>
+            <p data-i18n="proj1.desc">Mobile portal for DPR RI members &amp; ASN parliament staff.</p>
             <div class="card__tech"><span>Mobile</span><span>DPR RI</span><span>Figma</span></div>
           </div>
         </article>
@@ -399,9 +399,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Website</span>
+            <span class="card__tag" data-i18n="tag.website">Website</span>
             <h3>CV Star Ayres Indonesia</h3>
-            <p>Company profile website for CV Star Ayres Indonesia.</p>
+            <p data-i18n="proj2.desc">Company profile website for CV Star Ayres Indonesia.</p>
             <div class="card__tech"><span>Web</span><span>Company Profile</span></div>
           </div>
         </article>
@@ -416,9 +416,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Mobile App</span>
+            <span class="card__tag" data-i18n="tag.mobile">Mobile App</span>
             <h3>Absensi MDRR</h3>
-            <p>Attendance app with facial recognition &amp; geolocation tracking.</p>
+            <p data-i18n="proj3.desc">Attendance app with facial recognition &amp; geolocation tracking.</p>
             <div class="card__tech"><span>Face Recognition</span><span>Geolocation</span><span>Mobile</span></div>
           </div>
         </article>
@@ -433,9 +433,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Web App</span>
+            <span class="card__tag" data-i18n="tag.webapp">Web App</span>
             <h3>Codashop Clone</h3>
-            <p>Game top-up platform built with Node.js, MongoDB, and EJS.</p>
+            <p data-i18n="proj4.desc">Game top-up platform built with Node.js, MongoDB, and EJS.</p>
             <div class="card__tech"><span>Node.js</span><span>MongoDB</span><span>EJS</span></div>
           </div>
         </article>
@@ -450,9 +450,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Web App</span>
+            <span class="card__tag" data-i18n="tag.webapp">Web App</span>
             <h3>Food Ordering System</h3>
-            <p>Online food ordering with Java Spring &amp; MySQL.</p>
+            <p data-i18n="proj5.desc">Online food ordering with Java Spring &amp; MySQL.</p>
             <div class="card__tech"><span>Java Spring</span><span>MySQL</span></div>
           </div>
         </article>
@@ -467,9 +467,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Desktop</span>
+            <span class="card__tag" data-i18n="tag.desktop">Desktop</span>
             <h3>Hospital Management</h3>
-            <p>Comprehensive hospital management with JavaFX and MySQL.</p>
+            <p data-i18n="proj6.desc">Comprehensive hospital management with JavaFX and MySQL.</p>
             <div class="card__tech"><span>JavaFX</span><span>MySQL</span></div>
           </div>
         </article>
@@ -484,9 +484,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Web Platform</span>
+            <span class="card__tag" data-i18n="tag.webplatform">Web Platform</span>
             <h3>AsdarrID Top Up</h3>
-            <p>Gaming top-up platform with modern UI.</p>
+            <p data-i18n="proj7.desc">Gaming top-up platform with modern UI.</p>
             <div class="card__tech"><span>Node.js</span><span>MongoDB</span></div>
           </div>
         </article>
@@ -501,9 +501,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Mobile</span>
+            <span class="card__tag" data-i18n="tag.mobileapp">Mobile</span>
             <h3>Twitter Clone</h3>
-            <p>Social media app built with Dart &amp; Flutter.</p>
+            <p data-i18n="proj8.desc">Social media app built with Dart &amp; Flutter.</p>
             <div class="card__tech"><span>Dart</span><span>Flutter</span></div>
           </div>
         </article>
@@ -518,9 +518,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Game</span>
+            <span class="card__tag" data-i18n="tag.game">Game</span>
             <h3>2D Android Game</h3>
-            <p>Unity-based 2D game built with C#.</p>
+            <p data-i18n="proj9.desc">Unity-based 2D game built with C#.</p>
             <div class="card__tech"><span>Unity</span><span>C#</span></div>
           </div>
         </article>
@@ -535,9 +535,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Web App</span>
+            <span class="card__tag" data-i18n="tag.webapp">Web App</span>
             <h3>Movie Database</h3>
-            <p>Movie search app powered by TMDB API.</p>
+            <p data-i18n="proj10.desc">Movie search app powered by TMDB API.</p>
             <div class="card__tech"><span>jQuery</span><span>TMDB API</span></div>
           </div>
         </article>
@@ -552,9 +552,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Desktop</span>
+            <span class="card__tag" data-i18n="tag.desktop">Desktop</span>
             <h3>Game Top Up App</h3>
-            <p>JavaFX desktop application for game top-ups.</p>
+            <p data-i18n="proj11.desc">JavaFX desktop application for game top-ups.</p>
             <div class="card__tech"><span>JavaFX</span><span>MySQL</span></div>
           </div>
         </article>
@@ -569,9 +569,9 @@
             </div>
           </div>
           <div class="card__body">
-            <span class="card__tag">Game</span>
+            <span class="card__tag" data-i18n="tag.game">Game</span>
             <h3>Mobile Game 2D</h3>
-            <p>Unity game development project.</p>
+            <p data-i18n="proj12.desc">Unity game development project.</p>
             <div class="card__tech"><span>Unity</span><span>C#</span></div>
           </div>
         </article>
