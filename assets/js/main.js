@@ -9,17 +9,18 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-  const header     = $('#header');
-  const hamburger  = $('#hamburger');
-  const mobileNav  = $('#mobileNav');
-  const mobileClose = $('#mobileClose');
-  const themeToggle = $('#themeToggle');
+  const header       = $('#header');
+  const hamburger    = $('#hamburger');
+  const sidebar      = $('#sidebar');
+  const sidebarClose = $('#sidebarClose');
+  const backdrop     = $('#sidebarBackdrop');
+  const themeToggle  = $('#themeToggle');
   const themeToggleMobile = $('#themeToggleMobile');
-  const themeIcon  = themeToggle?.querySelector('i');
+  const themeIcon    = themeToggle?.querySelector('i');
   const themeIconMobile = themeToggleMobile?.querySelector('i');
-  const navLinks   = $$('.nav__link');
-  const sections   = $$('section[id]');
-  const contactForm = $('#contactForm');
+  const navLinks     = $$('.nav__link');
+  const sections     = $$('section[id]');
+  const contactForm  = $('#contactForm');
 
   /* =========================================
      THEME
@@ -61,12 +62,6 @@
     if (sy > 40) header?.classList.add('scrolled');
     else header?.classList.remove('scrolled');
 
-    if (sy > 300 && sy > lastScrollY + 10 && !mobileNav?.classList.contains('open')) {
-      header?.classList.add('header--hidden');
-    } else if (sy < lastScrollY - 10 || sy <= 300) {
-      header?.classList.remove('header--hidden');
-    }
-
     lastScrollY = sy;
 
     if (sy > 600) backToTop?.classList.add('visible');
@@ -80,6 +75,9 @@
       if (scrollPos >= top && scrollPos < top + h) {
         navLinks.forEach(l => l.classList.remove('active'));
         $(`.nav__link[href="#${id}"]`)?.classList.add('active');
+        /* sync sidebar active state */
+        $$('.sidebar__link').forEach(l => l.classList.remove('active'));
+        $(`.sidebar__link[href="#${id}"]`)?.classList.add('active');
       }
     }
   }
@@ -96,43 +94,44 @@
   });
 
   /* =========================================
-     MOBILE NAV
+     SIDEBAR (Mobile)
      ========================================= */
-  $$('.mobile-nav__link').forEach((link, i) => {
-    link.style.transitionDelay = `${0.05 + i * 0.05}s`;
-  });
-
-  function openMobileNav() {
+  function openSidebar() {
     hamburger?.classList.add('active');
-    mobileNav?.classList.add('open');
+    sidebar?.classList.add('open');
+    backdrop?.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeMobileNav() {
+  function closeSidebar() {
     hamburger?.classList.remove('active');
-    mobileNav?.classList.remove('open');
+    sidebar?.classList.remove('open');
+    backdrop?.classList.remove('open');
     document.body.style.overflow = '';
   }
 
   hamburger?.addEventListener('click', () => {
-    mobileNav?.classList.contains('open') ? closeMobileNav() : openMobileNav();
+    sidebar?.classList.contains('open') ? closeSidebar() : openSidebar();
   });
 
-  mobileClose?.addEventListener('click', closeMobileNav);
+  sidebarClose?.addEventListener('click', closeSidebar);
+  backdrop?.addEventListener('click', closeSidebar);
 
-  $$('.mobile-nav__link').forEach(link => {
+  $$('.sidebar__link').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      closeMobileNav();
+      e.stopPropagation(); /* prevent global smooth-scroll handler */
+      closeSidebar();
       const target = $(link.getAttribute('href'));
-      target?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => target?.scrollIntoView({ behavior: 'smooth' }), 320);
     });
   });
 
   /* =========================================
-     SMOOTH SCROLL (all anchors)
+     SMOOTH SCROLL (desktop nav + other anchors)
      ========================================= */
   $$('a[href^="#"]').forEach(a => {
+    if (a.classList.contains('sidebar__link')) return; /* handled above */
     a.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');

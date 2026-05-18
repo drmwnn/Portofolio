@@ -20,18 +20,29 @@
 
 <body>
 
-  <!-- ============ HEADER (Floating Toolbar) ============ -->
+  <!-- ============ HEADER (Full-Width Sticky Bar) ============ -->
   <header class="header" id="header">
-    <div class="header__bar">
-      <nav class="nav" id="nav">
-        <a href="#home" class="nav__link active" data-i18n="nav.home">Home</a>
-        <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
-        <a href="#experience" class="nav__link" data-i18n="nav.experience">Experience</a>
-        <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
-        <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
-        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
-      </nav>
-      <span class="header__sep"></span>
+    <!-- Logo -->
+    <a href="#home" class="header__logo">AD.</a>
+
+    <!-- Spacer -->
+    <div class="header__spacer"></div>
+
+    <!-- Desktop Nav -->
+    <nav class="nav" id="nav">
+      <a href="#home" class="nav__link active" data-i18n="nav.home">Home</a>
+      <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
+      <a href="#experience" class="nav__link" data-i18n="nav.experience">Experience</a>
+      <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
+      <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <!-- Spacer -->
+    <div class="header__spacer"></div>
+
+    <!-- Controls -->
+    <div class="header__controls">
       <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
         <span class="lang-toggle__label" id="langLabel">EN</span>
       </button>
@@ -39,41 +50,95 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
       </button>
+      <!-- Hamburger (mobile only, inside header) -->
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span>
-    </button>
   </header>
 
-  <!-- ============ MOBILE NAV ============ -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav__close" id="mobileClose" aria-label="Close">
-      <i class="ri-close-line"></i>
-    </button>
-    <div class="mobile-nav__content">
-      <a href="#home" class="mobile-nav__link" data-i18n="nav.home">Home</a>
-      <a href="#about" class="mobile-nav__link" data-i18n="nav.about">About</a>
-      <a href="#experience" class="mobile-nav__link" data-i18n="nav.experience">Experience</a>
-      <a href="#skills" class="mobile-nav__link" data-i18n="nav.skills">Skills</a>
-      <a href="#projects" class="mobile-nav__link" data-i18n="nav.projects">Projects</a>
-      <a href="#contact" class="mobile-nav__link" data-i18n="nav.contact">Contact</a>
+  <!-- ============ SIDEBAR BACKDROP ============ -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ============ MOBILE SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Sidebar Header -->
+    <div class="sidebar__header">
+      <span class="sidebar__logo">AD.</span>
+      <button class="sidebar__close" id="sidebarClose" aria-label="Close">
+        <i class="ri-close-line"></i>
+      </button>
     </div>
-    <div class="mobile-nav__footer">
-      <div class="mobile-nav__socials">
-        <a href="https://github.com/drmwnn" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
-        <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
-        <a href="https://wa.me/6285877888837" target="_blank" rel="noopener"><i class="ri-whatsapp-fill"></i></a>
-        <a href="https://www.instagram.com/drmwn67/" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+
+    <!-- Profile -->
+    <div class="sidebar__profile">
+      <div class="sidebar__avatar">
+        <img src="assets/img/Asep D.png" alt="Asep Darmawan">
       </div>
-      <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" aria-label="Toggle language">
-        <span class="lang-toggle__label" id="langLabelMobile">EN</span>
-      </button>
-      <button class="theme-toggle theme-toggle--mobile" id="themeToggleMobile" aria-label="Toggle theme">
-        <i class="ri-sun-line"></i>
-      </button>
+      <div class="sidebar__profile-info">
+        <h3>Asep Darmawan</h3>
+        <p>Full Stack Developer</p>
+        <span class="sidebar__status">
+          <span class="pulse-dot"></span>
+          <span data-i18n="hero.available">Available for work</span>
+        </span>
+      </div>
     </div>
-  </div>
+
+    <!-- Nav Links -->
+    <nav class="sidebar__nav">
+      <a href="#home" class="sidebar__link">
+        <span class="sidebar__link-num">01</span>
+        <i class="ri-home-4-line"></i>
+        <span class="sidebar__link-text" data-i18n="nav.home">Home</span>
+      </a>
+      <a href="#about" class="sidebar__link">
+        <span class="sidebar__link-num">02</span>
+        <i class="ri-user-3-line"></i>
+        <span class="sidebar__link-text" data-i18n="nav.about">About</span>
+      </a>
+      <a href="#experience" class="sidebar__link">
+        <span class="sidebar__link-num">03</span>
+        <i class="ri-briefcase-4-line"></i>
+        <span class="sidebar__link-text" data-i18n="nav.experience">Experience</span>
+      </a>
+      <a href="#skills" class="sidebar__link">
+        <span class="sidebar__link-num">04</span>
+        <i class="ri-code-s-slash-line"></i>
+        <span class="sidebar__link-text" data-i18n="nav.skills">Skills</span>
+      </a>
+      <a href="#projects" class="sidebar__link">
+        <span class="sidebar__link-num">05</span>
+        <i class="ri-apps-2-line"></i>
+        <span class="sidebar__link-text" data-i18n="nav.projects">Projects</span>
+      </a>
+      <a href="#contact" class="sidebar__link">
+        <span class="sidebar__link-num">06</span>
+        <i class="ri-send-plane-line"></i>
+        <span class="sidebar__link-text" data-i18n="nav.contact">Contact</span>
+      </a>
+    </nav>
+
+    <!-- Footer -->
+    <div class="sidebar__footer">
+      <div class="sidebar__socials">
+        <a href="https://github.com/drmwnn" target="_blank" rel="noopener" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/drmwnnn/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://wa.me/6285877888837" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+        <a href="https://www.instagram.com/drmwn67/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+      </div>
+      <div class="sidebar__controls">
+        <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" aria-label="Toggle language">
+          <span class="lang-toggle__label" id="langLabelMobile">EN</span>
+        </button>
+        <button class="theme-toggle theme-toggle--mobile" id="themeToggleMobile" aria-label="Toggle theme">
+          <i class="ri-sun-line"></i>
+        </button>
+      </div>
+    </div>
+
+  </aside>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
