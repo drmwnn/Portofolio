@@ -1540,3 +1540,89 @@ ul { list-style: none; }
   .contact__form { padding: 24px; }
   .footer__inner { flex-direction: column; text-align: center; }
 }
+
+/* =============== GRADIENT TEXT UTILITY =============== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--c-accent), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============== LANGUAGE TOGGLE =============== */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 100px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease;
+}
+.lang-toggle__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.55);
+  font-family: var(--font-heading);
+  transition: color .2s ease;
+}
+[data-theme="light"] .lang-toggle__label {
+  color: rgba(0,0,0,.45);
+}
+.lang-toggle:hover .lang-toggle__label {
+  color: var(--c-accent);
+}
+.lang-toggle:hover {
+  background: rgba(255,255,255,.06);
+}
+[data-theme="light"] .lang-toggle:hover {
+  background: rgba(0,0,0,.04);
+}
+/* Active state when language is selected */
+.lang-toggle.active .lang-toggle__label {
+  color: var(--c-accent);
+}
+
+/* Mobile lang toggle */
+.lang-toggle--mobile {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border);
+  padding: 0;
+  justify-content: center;
+}
+.lang-toggle--mobile .lang-toggle__label {
+  font-size: 11px;
+  color: var(--c-text-2);
+}
+.lang-toggle--mobile:hover {
+  border-color: var(--c-accent);
+  background: var(--c-glow);
+}
+.lang-toggle--mobile:hover .lang-toggle__label {
+  color: var(--c-accent);
+}
+
+/* =============== CV DUAL BUTTONS =============== */
+.cv-cta__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+.cv-cta__btn {
+  flex: 0 0 auto;
+}
+.cv-btn__flag {
+  font-size: 17px;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .cv-cta__buttons { flex-direction: column; align-items: center; }
+  .cv-cta__buttons .btn { width: 100%; justify-content: center; }
+}
