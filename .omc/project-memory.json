@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1791454338458,
+  "projectRoot": "d:\\Portofolio",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 2,
+      "lastAccessed": 1791454338285,
+      "keyFiles": [
+        "CV ASEP DARMAWAN (eng).pdf",
+        "CV ASEP DARMAWAN (id).pdf"
+      ]
+    },
+    "u0007ssets": {
+      "path": "u0007ssets",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1791454338286,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}
